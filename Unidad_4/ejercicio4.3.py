@@ -2,7 +2,7 @@
 ###**Ejercicio 4.3 (Palabras)**
 El programa debe:
 *   Contar con 3 funciones:
-    1. Contador de letras (letra,palabra): Debe contar la cantidad de la letra del argumento que tiene una palabra o 
+    1. Contador de letras (letra,palabra): Debe contar la cantidad de la letra del parametro que tiene una palabra o 
     frase (letra y frase deben Ambos parametros)
     2. Comparador de palabras (palabra1 vs palabra2): debe comparar que palabra tiene mas letra.
     IMPORANTE: deben ser palabras y no frases (verificar)
@@ -53,6 +53,56 @@ def quitador_vocales(palabra_o_frase):
     
     return palabra_auxiliar
 
+def quitar_vocales2():
+    vocales = ["a","e","i","o","u","A","E","I","O","U"]
+    palabra_1=input("Ingrese una palabra o frase: ")
+    palabra_2=input("Ingrese otra palabra o frase: ")
+    nueva_palabra1=""
+    nueva_palabra2=""
+    for i in palabra_1:
+        if i not in vocales:
+            nueva_palabra1 +="".join(i)
+        else:
+            pass
+    for i in palabra_2:
+        if i not in vocales:
+            nueva_palabra2 +="".join(i)
+        else:
+            pass
+    print(f""" 
+    1° Palabra: {nueva_palabra1}
+    2° Palabra: {nueva_palabra2}
+    Son las palabras sin vocales.""")
 
-letras = quitador_vocales("hola buen dia")
-print(f"Palabra sin vocales: {letras}")
+while True:
+    condicion=input(
+    """
+    Por favor ingrese una opcion:
+    1. Contador de letras
+    2. Comparador de palabras
+    3. Quitador de vocales
+    4 - Salir
+    Ingrese: """)
+    if condicion=="1":
+        while True:
+            letra = input("Ingrese una letra: ")
+            if letra.isalpha():
+                if len(letra)==1:
+                    break
+        while True:
+            palabra = input("ingrese una palabra o frase: ")
+            if len(palabra)>3:
+                break 
+        print(f"La cantidad de letras {letra} en {palabra} es: {contador_de_letras(letra,palabra)}")
+    elif condicion=="2":
+        #HACER
+        pass
+    elif condicion=="3":
+        #HACER
+        pass
+    elif condicion=="4":
+        break
+    else:
+        print("Opcion Incorrecta.")
+#letras = quitador_vocales("hola buen dia")
+#print(f"Palabra sin vocales: {letras}")

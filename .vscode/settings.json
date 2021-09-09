@@ -2,6 +2,7 @@
     "python.analysis.extraPaths": [
         "./Unidad 4/ejercicio4.1",
         "./Unidad4/ejercicio4_1",
-        "./Unidad_4/ejercicio4_1"
+        "./Unidad_4/ejercicio4_1",
+        "./Unidad_4/ejercicio4.5"
     ]
 }
