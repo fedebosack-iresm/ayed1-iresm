@@ -13,6 +13,11 @@ lista_choferes = []
 lista_autos = []
 
 class gestorTaxis:
+    def verificar_dni(self,dni):
+        if(dni.isdigit() and len(dni) == 8):
+            return True
+        else:
+            return False
     #La Clase Chofer tiene los atributos (nombre, apellido, dni, fecha nacimiento, Residencia)
     def crear_instancia_chofer(self):
         while True:
@@ -23,7 +28,7 @@ class gestorTaxis:
                 if(dni == c.get_dni()):
                     flag = False
 
-            if (dni.isdigit() and len(dni) == 8 and flag):
+            if (self.verificar_dni(dni) and flag):
                 break
             else:
                 print("El dni son solo numeros y tienen q ser 8 o ya existe")
@@ -80,18 +85,23 @@ class gestorTaxis:
             for i in lista_autos:
                 if(patente == i.get_patente()):
                     flag = False
+        
         flag = True
         self.imprimir_info_choferes()
         while flag:
             chofer = input("ingrese el dni del chofer: ")
-            for i in lista_choferes:
-                if(chofer == i.get_dni()):
-                    flag = False
+            if (self.verificar_dni(chofer)):
+                for i in lista_choferes:
+                    if(chofer == i.get_dni()):
+                        flag = False
+            else:
+                print("error en el formato de dni")
         
         for i in lista_autos:
             if(patente == i.get_patente()):
                 i.set_chofer(chofer)
                     
+ 
 
     def imprimir_lista(self):
         print(lista_choferes)

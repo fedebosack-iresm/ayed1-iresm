@@ -25,8 +25,8 @@ while True:
 Por favor ingrese una opcion:
     1. Crear Chofer
     2. Crear Auto
-    3. 
-    4. 
+    3. Modificar el chofer de un auto
+    4. TAREA
     5. imprmiir lista de choferes
     6. imprimir lista de autos
     7. Salir
@@ -37,7 +37,7 @@ Por favor ingrese una opcion:
     elif (opcion=="2"):
         gestor.crear_instancia_auto()
     elif (opcion=="3"):
-        pass
+        gestor.modificar_chofer_auto()
     elif (opcion=="4"):
         pass
     elif (opcion=="5"):
