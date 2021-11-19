@@ -16,9 +16,9 @@ while True:
     elif opcion == "3":  
         fn.editar_edad()
     elif opcion == "4":
-        pass
+        fn.listar_materias()
     elif opcion == "5":
-        pass
+        fn.agregar_materias()
     elif opcion == "6":
         break
     else:

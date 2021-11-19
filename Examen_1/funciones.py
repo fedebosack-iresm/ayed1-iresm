@@ -37,7 +37,7 @@ El programa debe:
 *   Estructurar el programa a criterio propio
 '''
 lista_alumnos=[["fede","feli","cris"],[55,66,77],["fede@","feli@","cris"]]
-
+materias = ["matematica", "lengua"]
 def agregar_alumno():
     while True:
         nombre = input("ingrese el nombre:")
@@ -88,3 +88,17 @@ def editar_edad():
             break
         else:
             print("el nombre no existe")
+
+def listar_materias():
+    for i in materias:
+        print(i)
+
+#5. Agregar materias al sistema (verificando que no exista previamente)
+def agregar_materias():
+    while True:
+        materia_nueva = input("ingrse una materia")
+        if (materia_nueva not in materias):
+            materias.append(materia_nueva)
+            break
+        else:
+            print("la materia existe")
